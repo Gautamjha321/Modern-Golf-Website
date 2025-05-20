@@ -1,136 +1,241 @@
-let cursorBlur = document.querySelector('#cursor-blur');
-let cursor = document.querySelector('#cursor');
-document.addEventListener('mousemove',(dets)=>{
-    cursor.style.left = dets.x +30 + 'px';
-    cursor.style.top = dets.y + 'px';
-    cursorBlur.style.left = dets.x -200+ 'px';
-    cursorBlur.style.top = dets.y -200+ 'px';
+// JavaScript for enhanced interactivity and animations
 
-})
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Loader animation
+    setTimeout(() => {
+        document.getElementById('loader').style.opacity = '0';
+        document.getElementById('loader').style.visibility = 'hidden';
+    }, 2000);
 
-let allelem = document.querySelectorAll('#nav h4');
-allelem.forEach((elem)=>{
-    elem.addEventListener('mouseenter',()=>{
-        cursor.style.scale = 3;
-        cursor.style.border = '1px solid #fff';
-        cursor.style.backgroundColor = 'transparent';
-    })
+    // Custom cursor effect
+    const cursor = document.getElementById('cursor');
+    const cursorBlur = document.getElementById('cursor-blur');
 
-      elem.addEventListener('mouseleave',()=>{
-        cursor.style.scale = 1;
-        cursor.style.border = '0px solid #95c11e';
-        cursor.style.backgroundColor = '#95c11e';
-    })
+    window.addEventListener('mousemove', function(e) {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursorBlur.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
 
-})
-
-gsap.to('#nav',{
-    backgroundColor :"#000",
-    height:"110px",
-    duration :0.5,
-    scrollTrigger:{
-        trigger :"#nav",
-        scroller:"body",
-        markers:true,
-        start : 'top -10%',
-        end: "top -11%",
-        scrub : 1
-    }
-})
-
-gsap.to('#main',{
-    backgroundColor:'#000',
-    scrollTrigger :{
-        trigger : '#main',
-        scroller :'body',
-        markers:true,
-        start :'top -25%',
-
-        end:'top -70%',
-        scrub :2
-    }
-})
-
-gsap.from('#about-us img,#about-us-in',{
-    y:90,
-    opacity :0,
-    duration :1,
-    scrollTrigger :{
-        trigger : '#about-us',
-        scroller : 'body',
+    // Add hover effect to all links and buttons
+    const links = document.querySelectorAll('a, button');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px) scale(1.5)`;
+            cursor.style.backgroundColor = 'white';
+            cursorBlur.style.height = '450px';
+            cursorBlur.style.width = '450px';
+        });
         
-        start : "top 70%",
-        end : 'top 65%',
-        scrub :1
+        link.addEventListener('mouseleave', function() {
+            cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px) scale(1)`;
+            cursor.style.backgroundColor = '#95c11e';
+            cursorBlur.style.height = '400px';
+            cursorBlur.style.width = '400px';
+        });
+    });
 
-    }
-})
-
-gsap.from('.card',{
-    scale :0.8,
-    opacity :0,
-    duration :2,
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
     
+    menuBtn.addEventListener('click', function() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = document.querySelectorAll('.mobile-nav .nav-link');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+        });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+        
+        // Back to top button visibility
+        const backToTop = document.getElementById('back-to-top');
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    // Testimonial slider
+    const dots = document.querySelectorAll('.dot');
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentTestimonial = 0;
     
-    scrollTrigger :{
-        trigger : '.card',
-        scroller : 'body',
+    function showTestimonial(index) {
+        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        testimonials[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentTestimonial = index;
+    }
     
-        start : "top 70%",
-        end : 'top 65%',
-        scrub :1
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showTestimonial(index));
+    });
+    
+    // Auto-rotate testimonials
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+    }, 5000);
 
+    // GSAP Animations
+    if (typeof gsap !== 'undefined') {
+        // Hero section animations
+        gsap.from("#page1 h1", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out"
+        });
+        
+        gsap.from("#page1 h2", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+        
+        gsap.from("#page1 p", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            delay: 0.6,
+            ease: "power4.out"
+        });
+        
+        // Scroll animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // About section
+        gsap.from("#about-us img", {
+            scrollTrigger: {
+                trigger: "#about-us",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            x: function(i) { return i === 0 ? -100 : 100; },
+            opacity: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+        
+        gsap.from("#about-us-in", {
+            scrollTrigger: {
+                trigger: "#about-us",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        // Card animations
+        gsap.from(".card", {
+            scrollTrigger: {
+                trigger: "#card-container",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+        
+        // Newsletter section
+        gsap.from(".newsletter", {
+            scrollTrigger: {
+                trigger: "#green",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        // Testimonial section
+        gsap.from(".testimonial-container", {
+            scrollTrigger: {
+                trigger: "#page3",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        // Elements section
+        gsap.from("#page4 h1", {
+            scrollTrigger: {
+                trigger: "#page4",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        gsap.from(".elem", {
+            scrollTrigger: {
+                trigger: ".elements-container",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+        
+        // Footer animations
+        gsap.from(".footer-column", {
+            scrollTrigger: {
+                trigger: "#footer",
+                start: "top 80%",
+                end: "bottom 60%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
     }
-})
-
-gsap.from('#colon1',{
-    y:-70,
-    x : -70,
-    scrollTrigger:{
-        trigger:'#colon1',
-scroller:'body',
-
-start:'top 50%',
-end:'top 45',
-scrub:4
-
-
-
-    }
-
-})
-
-
-gsap.from('#colon2',{
-    y:70,
-    x : 70,
-    scrollTrigger:{
-        trigger:'#colon1',
-scroller:'body',
-
-start:'top 50%',
-end:'top 45',
-scrub:4
-
-
-
-    }
-
-})
-
-gsap.from('#page h1',{
-
-    y:50,
-      scrollTrigger:{
-        trigger:'#page4 h1',
-scroller:'body',
-
-start:'top 75%',
-end:'top 70%',
-scrub:3
-
-
-
-    }
-
-})
+});

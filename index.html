@@ -3,24 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Golf Websites</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <link rel="stylesheet" href="styles.css">
+    <title>Sidcup Family Golf</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="nav">
-      <img
-        src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/cuzeapz4wseyvmotn85n"
-        alt="image"
-      />
-      <h4>TOPTRACER RANGE</h4>
-      <h4>Golf Lessons</h4>
-      <h4>Adventure Golf</h4>
+    <div id="loader">
+      <div class="loader-content">
+        <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/cuzeapz4wseyvmotn85n" alt="logo" />
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
 
-      <h4>Coffee Shop</h4>
+    <header id="nav">
+      <div class="logo">
+        <img src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/cuzeapz4wseyvmotn85n" alt="logo" />
+      </div>
+      <nav class="desktop-nav">
+        <a href="#" class="nav-link">TOPTRACER RANGE</a>
+        <a href="#" class="nav-link">Golf Lessons</a>
+        <a href="#" class="nav-link">Adventure Golf</a>
+        <a href="#" class="nav-link">Coffee Shop</a>
+        <a href="#" class="nav-link">Leagues</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
 
-      <h4>Leagues</h4>
+    <div class="mobile-nav">
+      <a href="#" class="nav-link">TOPTRACER RANGE</a>
+      <a href="#" class="nav-link">Golf Lessons</a>
+      <a href="#" class="nav-link">Adventure Golf</a>
+      <a href="#" class="nav-link">Coffee Shop</a>
+      <a href="#" class="nav-link">Leagues</a>
     </div>
 
     <div id="cursor"></div>
@@ -29,8 +52,8 @@
     <video autoplay loop muted src="hero.mp4"></video>
 
     <div id="main">
-      <div id="page1">
-        <h1>EAT. DRINK. PLAY.</h1>
+      <section id="page1">
+        <h1 data-text="EAT. DRINK. PLAY.">EAT. DRINK. PLAY.</h1>
         <h2>WELCOME TO SIDCUP FAMILY GOLF!</h2>
         <p>
           Sidcup Family Golf is a multipurpose golf facility located in Sidcup,
@@ -41,9 +64,15 @@
         <div id="arrow">
           <i class="fa-solid fa-arrow-down"></i>
         </div>
-      </div>
 
-      <div id="page2">
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </section>
+
+      <section id="page2">
         <div id="scroller">
           <div id="scroller-in-1">
             <h4>TOPTRACER RANGE</h4>
@@ -61,161 +90,243 @@
             <h4>Leagues</h4>
           </div>
         </div>
+        
         <div id="about-us">
           <img
             src="https://sidcup-golf-family.netlify.app/Assests/page2-left.avif"
-            alt=""
+            alt="Golf facility"
+            class="about-img left-img"
           />
           <div id="about-us-in">
             <h3>ABOUT US</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-              officia quam, eaque fuga quidem voluptas sapiente? Dolorum, fugiat
-              possimus. Cumque laboriosam quod quam! Exercitationem et
-              repellendus cupiditate? Officia, tempore eaque.
+              Welcome to Sidcup Family Golf, where passion meets play! Our state-of-the-art facility 
+              offers something for everyone, from beginners to seasoned pros. We combine cutting-edge 
+              technology with expert instruction to create an unforgettable golfing experience. 
+              Our mission is to make golf accessible, enjoyable, and rewarding for players of all ages and skill levels.
             </p>
+            <a href="#" class="btn-primary">Learn More</a>
           </div>
           <img
             src="https://sidcup-golf-family.netlify.app/Assests/page2-right.avif"
-            alt=""
+            alt="Golf course"
+            class="about-img right-img"
           />
         </div>
+        
         <div id="card-container">
           <div class="card" id="card1">
             <div class="overlay">
               <h4>TOPTRACER RANGE</h4>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam fugit dolorum nihil perferendis facilis iste sapiente
-                rerum suscipit libero! Earum quasi ea maxime mollitia labore
-                illo magni beatae, deserunt natus?
+                Experience golf like never before with our Toptracer Range technology. 
+                Track your shots, analyze your game, and compete with friends in various 
+                virtual games and challenges. Perfect for players of all skill levels looking 
+                to improve their game while having fun.
               </p>
+              <a href="#" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="card" id="card2">
             <div class="overlay">
-              <h4>ADVANTURE GOLF</h4>
+              <h4>ADVENTURE GOLF</h4>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam fugit dolorum nihil perferendis facilis iste sapiente
-                rerum suscipit libero! Earum quasi ea maxime mollitia labore
-                illo magni beatae, deserunt natus?
+                Embark on an exciting mini-golf adventure through our creatively designed courses. 
+                Navigate through challenging obstacles, stunning landscapes, and themed environments 
+                that provide entertainment for the whole family. A perfect activity for birthdays, 
+                dates, or family outings.
               </p>
+              <a href="#" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="card" id="card3">
             <div class="overlay">
               <h4>GOLF LESSONS</h4>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam fugit dolorum nihil perferendis facilis iste sapiente
-                rerum suscipit libero! Earum quasi ea maxime mollitia labore
-                illo magni beatae, deserunt natus?
+                Take your game to the next level with our professional golf lessons. 
+                Our experienced instructors provide personalized coaching tailored to your 
+                skill level and goals. Whether you're a beginner or looking to refine your 
+                technique, our lessons will help you improve consistently.
               </p>
+              <a href="#" class="card-btn">Explore <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
+        
         <div id="green">
-          <h4>
-            SIGN UP FOR SIDCUP NEWS AND <br />
-            SPECIAL OFFERS STRAIGHT TO YOUR INBOX
-          </h4>
+          <div class="newsletter">
+            <h4>
+              SIGN UP FOR SIDCUP NEWS AND <br />
+              SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+            </h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div id="page3">
-        <p>
-          I absolutely love the adventure golf here. It seems every time I come
-          they’ve added a new feature. My mum and I usually come together and
-          it’s such a laugh. The designs for the holes are creative and the two
-          different courses makes it more fun as you can complete both and
-          compare your scores!
-        </p>
+      <section id="page3">
+        <div class="testimonial-container">
+          <img
+            id="colon1"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+            alt="quote"
+            class="quote-img"
+          />
+          
+          <div class="testimonial-slider">
+            <div class="testimonial active">
+              <p>
+                I absolutely love the adventure golf here. It seems every time I come
+                they've added a new feature. My mum and I usually come together and
+                it's such a laugh. The designs for the holes are creative and the two
+                different courses makes it more fun as you can complete both and
+                compare your scores!
+              </p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer" class="author-img">
+                <h5>Sarah Johnson <span>Golf Enthusiast</span></h5>
+              </div>
+            </div>
+            
+            <div class="testimonial">
+              <p>
+                The Toptracer Range at Sidcup Family Golf is a game-changer! Being able to
+                track my shots and compete in virtual games has made practice so much more
+                enjoyable. The staff are incredibly friendly and the facilities are top-notch.
+                I've seen significant improvement in my game since I started coming here.
+              </p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="author-img">
+                <h5>Michael Thompson <span>Regular Member</span></h5>
+              </div>
+            </div>
+            
+            <div class="testimonial">
+              <p>
+                The golf lessons at Sidcup have transformed my game completely. The instructors
+                are patient, knowledgeable, and really take the time to understand your individual
+                needs. The technology they use to analyze your swing is impressive, and the feedback
+                is always constructive. Highly recommend to anyone looking to improve!
+              </p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="author-img">
+                <h5>Emma Wilson <span>Beginner Golfer</span></h5>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          
+          <img
+            id="colon2"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+            alt="quote"
+            class="quote-img"
+          />
+        </div>
+      </section>
 
-        <img
-          id="colon1"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
-          alt=""
-        />
-        <img
-          id="colon2"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
-          alt=""
-        />
-      </div>
-
-      <div id="page4">
+      <section id="page4">
         <h1>WHAT ARE YOU WAITING FOR?</h1>
 
-        <div class="elem">
-          <h2>TOPTRACER RANGE</h2>
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-            alt=""
-          />
-        </div>
+        <div class="elements-container">
+          <div class="elem">
+            <h2>TOPTRACER RANGE</h2>
+            <img
+              src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+              alt="Toptracer Range"
+            />
+            <div class="elem-overlay">
+              <a href="#" class="btn-secondary">Book Now</a>
+            </div>
+          </div>
 
-        <div class="elem">
-          <h2>GOLF LESSONS</h2>
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-            alt=""
-          />
+          <div class="elem">
+            <h2>GOLF LESSONS</h2>
+            <img
+              src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+              alt="Golf Lessons"
+            />
+            <div class="elem-overlay">
+              <a href="#" class="btn-secondary">Book Now</a>
+            </div>
+          </div>
+          
+          <div class="elem">
+            <h2>ADVENTURE GOLF</h2>
+            <img
+              src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+              alt="Adventure Golf"
+            />
+            <div class="elem-overlay">
+              <a href="#" class="btn-secondary">Book Now</a>
+            </div>
+          </div>
         </div>
-        <div class="elem">
-          <h2>ADVANTURE</h2>
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-            alt=""
-          />
-        </div>
-      </div>
-      <div id="footer">
-        <div class="f1">
-          <img
-            src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/cuzeapz4wseyvmotn85n"
-            alt="image"
-          />
-        </div>
-        <div class="f2">
-          <h3>TOPTRACER RANGE</h3>
-          <h3>Golf Lessons</h3>
-          <h3>Adventure Golf</h3>
-        </div>
+      </section>
+      
+      <footer id="footer">
+        <div class="footer-container">
+          <div class="footer-column f1">
+            <img
+              src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/cuzeapz4wseyvmotn85n"
+              alt="logo"
+            />
+            <p>Making golf fun and accessible to everyone since 2010.</p>
+          </div>
+          
+          <div class="footer-column f2">
+            <h3>SERVICES</h3>
+            <a href="#">TOPTRACER RANGE</a>
+            <a href="#">Golf Lessons</a>
+            <a href="#">Adventure Golf</a>
+          </div>
 
-        <div class="f3">
-          <h3>coffee shop</h3>
-          <h3>LEAGUES</h3>
-          <h3>Contact us</h3>
-        </div>
+          <div class="footer-column f3">
+            <h3>FACILITIES</h3>
+            <a href="#">Coffee Shop</a>
+            <a href="#">LEAGUES</a>
+            <a href="#">Contact us</a>
+          </div>
 
-        <div class="f4">
-          <h4>
-            A20, SIDCUP BYPASS <br />
-            CHISLEHURST <br />
-            KENT <br />
-            BR7 6RP <br />
-            TEL: 0208 309 0181 <br />
-            GET DIRECTIONS <br />
-          </h4>
+          <div class="footer-column f4">
+            <h3>FIND US</h3>
+            <address>
+              A20, SIDCUP BYPASS <br />
+              CHISLEHURST <br />
+              KENT <br />
+              BR7 6RP <br />
+              TEL: 0208 309 0181 <br />
+              <a href="#" class="directions-link">GET DIRECTIONS <i class="fas fa-map-marker-alt"></i></a>
+            </address>
+          </div>
         </div>
-      </div>
+        
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p>&copy; 2025 Sidcup Family Golf. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
-      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <a href="#page1" id="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
-      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGwGwZdtrT06bGge8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
   </body>
 </html>
